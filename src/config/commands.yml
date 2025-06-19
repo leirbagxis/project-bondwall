@@ -6,6 +6,41 @@
     - label: "Minhas denúncias"
       callback: "list_denuncias"
 
+- name: denunciar_reply
+  #text: "<b>📣 Denunciar um membro</b>\n\nPara denunciar um membro, por favor, forneça as seguintes informações:\n\n1️⃣ Nome de usuário do membro a ser denunciado\n2️⃣ Motivo da denúncia (explicação detalhada)\n3️⃣ Provas (se houver)\n\nUse o botão abaixo para enviar sua denúncia."
+  text: "<b>🚨 Olá, {{first_name}}!</b>\n\nVocê está prestes a denunciar o usuário <code>{{target_user}}</code>.\n\nPor favor, selecione abaixo o motivo da denúncia para que possamos prosseguir com a análise.\n\n<blockquote>Denuncie com responsabilidade. Uso indevido pode gerar punições.</blockquote>"
+  buttons:
+    -
+      - label: "CP"
+        callback: "select:cp"
+      - label: "SPM"
+        callback: "select:spm"
+    -
+      - label: "INS"
+        callback: "select:ins"
+    -
+      - label: "TRT"
+        callback: "select:trt"
+      - label: "FLO"
+        callback: "select:flo"
+    -
+      - label: "SUS"
+        callback: "select:sus"
+    -
+      - label: "FAK"
+        callback: "select:fak"
+      - label: "BOT"
+        callback: "select:bot"
+    -
+      - label: "VZL"
+        callback: "select:vzl"
+    -
+      - label: "DVR"
+        callback: "select:dvr"
+      - label: "EXI"
+        callback: "select:exi"
+
+
 - name: help
   text: "Aqui estão os comandos disponíveis:"
   buttons: []
