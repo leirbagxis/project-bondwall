@@ -1,0 +1,11 @@
+- name: start
+  text: "<b>🛡 Bem-vindo(a) ao bot Oficial da Federação BondeWall!</b>\n\nUse os comandos abaixo para interagir com o Conselho e consultar regras:\n\n📣 /denunciar - Reporte um membro\n📜 /manual - Consulte o manual Oficial \n⚖️ /apelar - Envie sua defesa\n📃 /fbanhelp - Tabela de códigos FBAN\n\n<blockquote>Aqui se vive com honra. Aqui é BondWall.</blockquote>"
+  buttons:
+    - label: "Nova denúncia"
+      callback: "new_denuncia"
+    - label: "Minhas denúncias"
+      callback: "list_denuncias"
+
+- name: help
+  text: "Aqui estão os comandos disponíveis:"
+  buttons: []
