@@ -22,3 +22,7 @@ export const saveReportService = async (reportData) => {
         throw new Error('Failed to save report');
     }
 }
+
+export const updateResultReportService = async (reportId, result) => {
+    
+}

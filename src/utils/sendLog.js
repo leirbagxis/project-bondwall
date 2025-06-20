@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-import { renderTemplate } from './utils.js';
+import { buildKeyboard, renderTemplate } from './utils.js';
 import { getCommand } from '../config/commandsLoader.js';
 dotenv.config();
 
@@ -13,7 +13,7 @@ export const sendLog = async (bot, denuncia) => {
   try {
     const targetUser = await bot.telegram.getChat(denuncia.denunciadoId);
     const denunciante = await bot.telegram.getChat(denuncia.denuncianteId);
-    
+
     denuncia.denunciaId = denuncia.id;
     denuncia.dataHora = new Date(denuncia.createdAt).toLocaleString('pt-BR');
     denuncia.target_user = targetUser.first_name;
@@ -21,11 +21,13 @@ export const sendLog = async (bot, denuncia) => {
 
     const command = getCommand('logDenuncia');
     const logMessage = renderTemplate(command.text, denuncia)
+    const logKeyboard = buildKeyboard(command.buttons, denuncia)
 
     
     await bot.telegram.sendMessage(chatId, logMessage, {
       parse_mode: 'HTML',
       disable_web_page_preview: true,
+      reply_markup:  { inline_keyboard: logKeyboard }
     });
 
   } catch (err) {

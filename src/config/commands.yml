@@ -62,12 +62,20 @@
   #text: "<b>📣 Nova Denúncia Recebida</b>\n\n👤 <b>Denunciante:</b> <a href='tg://user?id={{denuncianteId}}'>{{denunciante}}</a>\n🆔 <b>ID:</b> {{denuncianteId}}\n\n👥 <b>Alvo:</b> <a href='tg://user?id={{denunciadoId}}'>{{denunciado}}</a>\n🆔 <b>ID:</b> {{denunciadoId}}\n\n📝 <b>Tipo:</b> {{motivo}}\n📄 <b>Descrição:</b> {{descricao}}\n\n📌 <b>Status:</b> {{status}}\n\n⏰ {{data_hora}}"
   #text: "<b>📣 Nova Denúncia Recebida</b>\n\n<b>👤 Denunciante:</b> <a href='tg://user?id={{denuncianteId}}'>{{first_name}}</a>\n<b>🆔 ID:</b> {{denuncianteId}}\n\n<b>👥 Alvo:</b> <a href='tg://user?id={{denunciadoId}}'>{{target_user}}</a>\n<b>🆔 ID:</b> {{denunciadoId}}"
   buttons:
-    - label: "Analise"
-      callback: "set:analise:{{denunciaId}}"
-    - label: "Banir"
-      callback: "set::{{denunciaId}}"
-    - label: "Rejeitar"
-      callback: "set:rejeitar:{{denunciaId}}"
+    -
+      - label: "Em Análise"
+        callback: "set:analise:{{denunciaId}}"
+    -
+      - label: "Banir"
+        callback: "set:aceitar:{{denunciaId}}"
+      - label: "Rejeitar"
+        callback: "set:rejeitar:{{denunciaId}}"
+      - label: "Advertir"
+        callback: "set:advertir:{{denunciaId}}"
+      - label: "Duplicada"
+        callback: "set:duplicada:{{denunciaId}}"
+
+    
 
 
 - name: help

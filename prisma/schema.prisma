@@ -55,6 +55,7 @@ enum DenunciaResultado {
   NENHUM
   ACEITA
   REJEITADA
-  SEM_PROVAS
+  ADVERTENCIA
   DUPLICADA
+  SEM_PROVAS
 }
