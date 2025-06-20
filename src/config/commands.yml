@@ -56,6 +56,21 @@
       - label: "🗑️ Excluir Denúncia"
         callback: "excluir"
 
+- name: logDenuncia
+  text: "<b>📣 Nova Denúncia Recebida</b>\n\n🆔 <b>ID da Denúncia:</b> {{denunciaId}}\n\n👤 <b>Denunciante:</b> <a href='tg://user?id={{denuncianteId}}'>{{first_name}}</a> ({{denuncianteId}})\n\n👥 <b>Alvo:</b> <a href='tg://user?id={{denunciadoId}}'>{{target_user}}</a> ({{denunciadoId}})\n\n📝 <b>Tipo:</b> {{tipo}}\n📄 <b>Descrição:</b> {{descricao}}\n\n📌 <b>Status:</b> {{status}}\n\n⏰ {{dataHora}}"
+
+  #text: "<b>📣 Nova Denúncia Recebida</b>\n\n👤 <b>Denunciante:</b> <a href='tg://user?id={{denuncianteId}}'>{{denunciante}}</a>\n🆔 <b>ID:</b> {{denuncianteId}}\n\n👥 <b>Alvo:</b> <a href='tg://user?id={{denunciadoId}}'>{{denunciado}}</a>\n🆔 <b>ID:</b> {{denunciadoId}}\n\n📝 <b>Tipo:</b> {{motivo}}\n📄 <b>Descrição:</b> {{descricao}}\n\n📌 <b>Status:</b> {{status}}\n\n⏰ {{data_hora}}"
+  #text: "<b>📣 Nova Denúncia Recebida</b>\n\n<b>👤 Denunciante:</b> <a href='tg://user?id={{denuncianteId}}'>{{first_name}}</a>\n<b>🆔 ID:</b> {{denuncianteId}}\n\n<b>👥 Alvo:</b> <a href='tg://user?id={{denunciadoId}}'>{{target_user}}</a>\n<b>🆔 ID:</b> {{denunciadoId}}"
+  buttons:
+    - label: "Analise"
+      callback: "set:analise:{{denunciaId}}"
+    - label: "Banir"
+      callback: "set::{{denunciaId}}"
+    - label: "Rejeitar"
+      callback: "set:rejeitar:{{denunciaId}}"
+
+
 - name: help
   text: "Aqui estão os comandos disponíveis:"
   buttons: []
+
