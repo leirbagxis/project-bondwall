@@ -29,7 +29,6 @@ model Denuncia {
   user        User?          @relation(fields: [userId], references: [id])
 }
 
-
 model Command {
   id        Int      @id @default(autoincrement())
   name      String   @unique

@@ -9,37 +9,52 @@
 - name: denunciar_reply
   #text: "<b>📣 Denunciar um membro</b>\n\nPara denunciar um membro, por favor, forneça as seguintes informações:\n\n1️⃣ Nome de usuário do membro a ser denunciado\n2️⃣ Motivo da denúncia (explicação detalhada)\n3️⃣ Provas (se houver)\n\nUse o botão abaixo para enviar sua denúncia."
   text: "<b>🚨 Olá, {{first_name}}!</b>\n\nVocê está prestes a denunciar o usuário <code>{{target_user}}</code>.\n\nPor favor, selecione abaixo o motivo da denúncia para que possamos prosseguir com a análise.\n\n<blockquote>Denuncie com responsabilidade. Uso indevido pode gerar punições.</blockquote>"
+  confirm: "<b>⚠️ Confirmação de denúncia</b>\n\n{{first_name}}, você está prestes a denunciar o usuário <code>{{target_user}}</code>.\n\n<b>Motivo:</b> {{reason}}\n<b>Descrição:</b> {{reportDescription}}\n\nTem certeza de que deseja prosseguir com a denúncia?\n\n<blockquote>Denúncias falsas ou indevidas podem resultar em punições para quem as realiza.</blockquote>"
+  succes: "<b>✅ Sua denúncia foi enviada para análise!</b>\n\nO Conselho irá avaliar o caso do usuário <code>{{target_user}}</code> pelo motivo <b>{{reason}}</b>.\n\n<blockquote>Agradecemos pela sua colaboração em manter a comunidade segura.</blockquote>"
+  cancel: "<b>❌ Denúncia cancelada.</b>\n\nA denúncia contra o usuário <code>{{target_user}}</code> foi cancelada.\n\n<blockquote>Se mudar de ideia, você pode iniciar o processo novamente a qualquer momento.</blockquote>"
+
   buttons:
     -
-      - label: "CP"
-        callback: "select:cp"
-      - label: "SPM"
-        callback: "select:spm"
+      - label: "🔴 CP01"
+        callback: "select:CP01:{{reportedId}}"
+      - label: "🔐 VZL1"
+        callback: "select:VZL1:{{reportedId}}"
     -
-      - label: "INS"
-        callback: "select:ins"
+      - label: "🤖 BOT1"
+        callback: "select:BOT1:{{reportedId}}"
     -
-      - label: "TRT"
-        callback: "select:trt"
-      - label: "FLO"
-        callback: "select:flo"
+      - label: "🎲 LK01"
+        callback: "select:LK01:{{reportedId}}"
+      - label: "💢 CBY1"
+        callback: "select:CBY1:{{reportedId}}"
     -
-      - label: "SUS"
-        callback: "select:sus"
+      - label: "🕵️‍♂️ STK1"
+        callback: "select:STK1:{{reportedId}}"
     -
-      - label: "FAK"
-        callback: "select:fak"
-      - label: "BOT"
-        callback: "select:bot"
+      - label: "🗣 DIF1"
+        callback: "select:DIF1:{{reportedId}}"
+      - label: "⚖️ CAL1"
+        callback: "select:CAL1:{{reportedId}}"
     -
-      - label: "VZL"
-        callback: "select:vzl"
+      - label: "🕸 FAK1"
+        callback: "select:FAK1:{{reportedId}}"
     -
-      - label: "DVR"
-        callback: "select:dvr"
-      - label: "EXI"
-        callback: "select:exi"
+      - label: "📢 SPM1"
+        callback: "select:SPM1:{{reportedId}}"
+      - label: "🛡 TRT1"
+        callback: "select:TRT1:{{reportedId}}"
+  
+  buttons_confirm:
+    -
+      - label: "✅ Confirmar"
+        callback: "confirmReport:{{reasonId}}:{{reportedId}}"
+      - label: "❌ Cancelar"
+        callback: "cancelar_denuncia"
 
+  buttons_delete:
+    -
+      - label: "🗑️ Excluir Denúncia"
+        callback: "excluir"
 
 - name: help
   text: "Aqui estão os comandos disponíveis:"
