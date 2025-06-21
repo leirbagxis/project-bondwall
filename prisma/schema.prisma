@@ -48,7 +48,6 @@ enum DenunciaStatus {
   NOVA
   EM_ANALISE
   RESOLVIDA
-  REJEITADA
 }
 
 enum DenunciaResultado {
@@ -56,6 +55,5 @@ enum DenunciaResultado {
   ACEITA
   REJEITADA
   ADVERTENCIA
-  DUPLICADA
   SEM_PROVAS
 }

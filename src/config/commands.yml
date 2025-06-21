@@ -70,10 +70,11 @@
         callback: "set:aceitar:{{denunciaId}}"
       - label: "Rejeitar"
         callback: "set:rejeitar:{{denunciaId}}"
+    -
       - label: "Advertir"
         callback: "set:advertir:{{denunciaId}}"
-      - label: "Duplicada"
-        callback: "set:duplicada:{{denunciaId}}"
+      - label: "Sem Provas"
+        callback: "set:semprovas:{{denunciaId}}"
 
     
 
